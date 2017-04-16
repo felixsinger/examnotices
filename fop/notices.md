@@ -3,8 +3,8 @@
 ```java
 // Wrapper Klassen
 // same for Integer, Double, Float, ...
-Integer i = new Integer.valueOf(5);
-Double d = new Double.valueOf("5");
+Integer i = Integer.valueOf(5);
+Double d = Double.valueOf("5");
 
 Integer valueOf(String s);
 Integer valueOf(int m);
@@ -19,7 +19,7 @@ double parseDouble(String s);
 
 ```java
 // Arrays
-List l = Arrays.asList(new int[]{1, 2, 3});
+List l = Arrays.asList(1, 2, 3);
 ```
 
 ## JUnit
@@ -146,13 +146,13 @@ boolean addAll(int index, Collections c);
 void clear();
 Object clone();
 boolean contains(Object o);
-Object get(int index);
-Object getFirst();
-Object getLast();
+E get(int index);
+E getFirst();
+E getLast();
 int indexOf(Object o);
-Object remove(int index);
-Object remove(Object o);
-Object set(int index, Object element);
+E remove(int index);
+E remove(Object o);
+E set(int index, Object element);
 int size();
 Object[] toArray();
 boolean contains(Object element);
@@ -190,12 +190,12 @@ Object clone();
 boolean containsKey(Object key);
 boolean containsValue(Object value);
 Set entrySet();
-Object get(Object key);
+E get(Object key);
 boolean isEmpty();
 Set keySet();
 Object put(Object key, Object value);
 void putAll(Map m);
-Object remove(Object key);
+E remove(Object key);
 int size();
 Collection values();
 ```
@@ -240,8 +240,8 @@ Stream<R> peek(e -> System.out.println(e));
 
 ### Terminal operations ("machen etwas" liefern aber keinen Stream)
 ```java
-void foreach(Consumer<? super T> action);
-void foreach(e -> System.out.println(e));
+void forEach(Consumer<? super T> action);
+void forEach(e -> System.out.println(e));
 long count();
 Optional<T> min(Comparator<? super T> comp);
 Optional<T> max(Comparator<? super T> comp);
@@ -254,7 +254,7 @@ List<X> collect(Collectors.toList());
 ```
 
 
-# Racket
+# HtDP-TL
 ## Documentation
 ```java
 ;; fcv: (listof number) number -> number
